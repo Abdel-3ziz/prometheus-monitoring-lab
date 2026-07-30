@@ -1,0 +1,11 @@
+groups:
+  - name: nodeJS-metrics
+    rules:
+      - alert: NodejsAppDown
+        expr: up{job="nodeJS-metrics"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Node.js application is down"
+          description: "Prometheus cannot scrape the Node.js application."

@@ -1,0 +1,29 @@
+global:
+
+
+
+route:
+
+  group_by: ['alertname']
+
+  group_wait: 10s
+
+  group_interval: 15s
+
+  repeat_interval: 45s
+
+  receiver: 'slack'
+
+
+
+receivers:
+
+  - name: 'slack'
+
+    slack_configs:
+
+      - channel: '#iti'
+
+        send_resolved: true
+
+        api_url: 'https://hooks.slack.com/services/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'
